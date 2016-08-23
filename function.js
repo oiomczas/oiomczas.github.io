@@ -78,13 +78,14 @@ const controler = {
   procesClick(){
     view.displayMessage(`Zaczyna ${model.playerSymbol}`);
     let cells = document.querySelectorAll('.game-cell');
-    cells.forEach(element => element.addEventListener('click', ()=>{
+    for(let element of cells){
+    element.addEventListener('click',()=>{
      if(model.gameBoard[element.id] === 'X' || model.gameBoard[element.id] === 'O'){
        return false;
      }else{
       model.playerAction(element.id);
      }
-    }))
+    })}
   }
 }
 
