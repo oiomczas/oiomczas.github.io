@@ -62,7 +62,11 @@ const model = {
       this.gameBoard.id3 === this.gameBoard.id6 && this.gameBoard.id6 === this.gameBoard.id9 ||
       this.gameBoard.id1 === this.gameBoard.id5 && this.gameBoard.id5 === this.gameBoard.id9 ||
       this.gameBoard.id3 === this.gameBoard.id5 && this.gameBoard.id5 === this.gameBoard.id7){
-      view.displayMessage(`Wygrał znak ${this.playerSymbol}`);
+      if(this.playerSymbol === "O"){
+          view.displayMessage(`Wygrał znak X`);
+        }else{
+          view.displayMessage(`Wygrał znak O`);
+        }
       this.gameOver = true;
     }
   }
